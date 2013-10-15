@@ -174,6 +174,7 @@ If no root marker is found, the current working directory is used."
      ((equal system-root-dir this-dir) nil)
      (t (cgs-find-root parent-dir root-markers)))))
 
+;;;###autoload
 (defun jump-to-cucumber-step ()
   "Jumps to a step definition."
   (interactive)
