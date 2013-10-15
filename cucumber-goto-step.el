@@ -80,6 +80,7 @@
   :group   'cucumber-goto-step)
 
 (defcustom cgs-step-search-path "/features/**/*_steps.rb"
+  "The file glob that is used to search for cucumber steps.  Defaults to /features/**/*_steps.rb."
   :type 'string
   :group 'cucumber-goto-step)
 
