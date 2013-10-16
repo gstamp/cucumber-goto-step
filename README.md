@@ -33,3 +33,9 @@ Once installed cucumber-goto-step can be invoked using:
  - cgs-find-project-functions: a list of functions used to locate the
    project root.  A default function is provided however you may
    optionally override this is you have any special requirements.
+
+Current limitations:
+
+- No specific support for step definitions in languages other than Ruby.
+- No support for string style Given/When/Then clauses.
+
