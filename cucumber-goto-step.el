@@ -1,10 +1,11 @@
 ;;; cucumber-goto-step.el --- Jump to cucumber step definition
 ;; Copyright (C) 2013 Glen Stampoultzis <gstamp@gmail.com>
 
-;; Author: Glen Stampoultzis <gstamp@gmail.com>
-;; Homepage: http://orthogonal.me
-;; Version: 0.0.1
-;; URL: https://github.com/gstamp/cucumber-goto-step
+;;; Author: Glen Stampoultzis <gstamp@gmail.com>
+;;; Homepage: http://orthogonal.me
+;;; Version: 0.0.1
+;;; Package-Requires: ((pcre2el "1.5"))
+;;; URL: https://github.com/gstamp/cucumber-goto-step
 
 ;; This file is NOT part of GNU Emacs.
 ;;
