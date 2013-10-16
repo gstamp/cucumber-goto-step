@@ -70,7 +70,7 @@
 (defgroup cucumber-goto-step nil
   "Automatically find an open the cucumber step on the current line."
   :tag "cucumber"
-  :group 'help)
+  :group 'tools)
 
 (defvar *cgs-default-root-markers* '(".git" ".svn" ".hg" ".bzr")
   "A list of files/directories to look for that mark a project root.")
