@@ -94,18 +94,22 @@
   (forward-line)
   (point))
 
-(defun cgs-loop-through-file (step pos)  
+(defun cgs-match (text step)
+  (ignore-errors
+    (let* ((elisp-text (rxt-pcre-to-elisp text))
+           (match ))
+      (string-match elisp-text step))))
+
+(defun cgs-loop-through-file (step pos)
   (let* ((match      (cgs-find-step pos))
          (text       (car match))
          (step-pos   (cdr match))
          (found-line nil))
-
     (while (and step-pos
                 (> step-pos pos)
                 (not found-line))
 
-      (let* ((elisp-text (rxt-pcre-to-elisp text))
-             (match      (string-match elisp-text step)))
+      (let* ((match (cgs-match text step)))
         (goto-char step-pos)
         (if (and match (>= match 0))
             (setq found-line (line-number-at-pos))
@@ -124,9 +128,9 @@
   (condition-case ex
       (progn
         (goto-char from)
-        (let* ((end   (re-search-forward "\\(Given\\|When\\|Then\\|And\\) +/.*/" (point-max)))
+        (let* ((end   (re-search-forward "\\(Given\\|When\\|Then\\|And\\).+/.*/" (point-max)))
                (start (progn
-                        (re-search-backward "\\(Given\\|When\\|Then\\|And\\) +")
+                        (re-search-backward "\\(Given\\|When\\|Then\\|And\\)")
                         (re-search-forward "/")))
                (match (buffer-substring-no-properties start (- end 1)) )
                (match (replace-regexp-in-string "\\\\" "\\" match nil 't nil)))
